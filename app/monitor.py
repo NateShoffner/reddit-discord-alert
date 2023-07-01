@@ -25,7 +25,10 @@ class SubredditMonitor:
     async def poll(self, interval):
         while True:
             self.logger.info("Polling...")
-            await self.get_new_posts()
+            try:
+                await self.get_new_posts()
+            except Exception as e:
+                self.logger.error(f"Error polling: {e}")
             await asyncio.sleep(interval)
 
     async def get_new_posts(self):
