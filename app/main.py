@@ -30,7 +30,7 @@ async def main():
     nest_asyncio.apply()
 
     loop = asyncio.get_event_loop()
-    task = loop.create_task(monitor.poll(10))
+    task = loop.create_task(monitor.poll(os.getenv("UPDATE_INTERVAL")))
 
     try:
         loop.run_until_complete(task)
