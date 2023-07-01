@@ -1,0 +1,5 @@
+Flask
+discord - webhook[async]
+cachetools
+python - dotenv
+praw
