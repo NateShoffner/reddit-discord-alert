@@ -1,5 +1,5 @@
 from discord_webhook import AsyncDiscordWebhook, DiscordEmbed
-from praw.models import Submission
+from asyncpraw.models import Submission
 
 
 class DiscordHandler:
