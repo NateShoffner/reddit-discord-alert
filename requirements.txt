@@ -1,5 +1,5 @@
 Flask
-discord - webhook[async]
+discord-webhook[async]
 cachetools
-python - dotenv
-praw
+python-dotenv
+asyncpraw

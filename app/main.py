@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-import praw
+import asyncpraw
 import asyncio
 import logging
 
@@ -15,7 +15,7 @@ logging.basicConfig(
 async def main():
     load_dotenv()
 
-    reddit = praw.Reddit(
+    reddit = asyncpraw.Reddit(
         client_id=os.getenv("REDDIT_ID"),
         client_secret=os.getenv("REDDIT_SECRET"),
         user_agent="Discord Webhook Bot (by /u/syntack)",
