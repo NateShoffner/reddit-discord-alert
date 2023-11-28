@@ -7,14 +7,15 @@ class DiscordHandler:
         self.webhook = webhook
 
     async def share_post(self, submission: Submission) -> None:
+        permalink = f"https://reddit.com{submission.permalink}"
         embed = DiscordEmbed(
             title=submission.title,
             description=f"{submission.selftext}",
-            url=submission.url,
+            url=permalink,
             color="FF0000",
             author={
                 "name": f"New post on /r/{submission.subreddit.display_name}",
-                "url": submission.url,
+                "url": permalink,
             },
         )
 
